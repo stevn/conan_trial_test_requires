@@ -26,4 +26,8 @@ target_include_directories(tiff_core
 
 target_link_libraries(tiff_core PRIVATE TIFF::TIFF)
 
-install(TARGETS tiff_core)
+install(
+    TARGETS tiff_core
+    EXPORT tiff_coreTargets
+    FILE_SET publicheaders
+)
