@@ -28,3 +28,7 @@ There are different aspects to this:
 
 - Run `./build.sh good` which uses 'known good' Conan versions 2.10-2.17 to show that the project can be built and works properly with those versions.
 - Run `./build.sh bad` which uses 'broken' Conan versions 2.18 / 2.19 to reproduce the issue regarding the conflict of the visibility trait.
+
+## Workaround
+
+The `bad` mode fails. However there is a workaround. Set `ENABLE_VISIBILITY_WORKAROUND=True` in `conanfile.py`. This moves the `test_requires` to "normal" `requires`, which means they get `visible=True` requirements trait instead of `visible=False`, which has its own downsides.
