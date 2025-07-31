@@ -2,12 +2,12 @@
 
 ## Introduction
 
-This is an example project showing the usage of libtiff which has a dependency to zlib, together with a unit test which uses libxml2, which also has a dependency to zlib, and zlib itself to unpack a gzipped xml file.
+This is an example project showing the usage of libtiff which has a dependency to zlib, together with a unit test which uses libxml2, which also has a dependency to zlib, and the unit test also uses zlib directly itself to unpack a gzipped xml file before parsing it.
 
 The question is how this is handled in Conan package management.
 
 - The zlib transitive dependency on the one hand has the 'visible=True' trait, because it is used in libtiff in the core library.
-- The zlib transitive dependency on the other hand also has the 'visible=False' trait:
+- The zlib direct/transitive dependency on the other hand also has the 'visible=False' trait:
   - because it is used in libxml2 in the unit test for the core library, and
   - because it is used in the unit test directly.
 
