@@ -31,4 +31,16 @@ There are different aspects to this:
 
 ## Workaround
 
-The `bad` mode fails. However there is a workaround. Set `ENABLE_VISIBILITY_WORKAROUND=True` in `conanfile.py`. This moves the `test_requires` to "normal" `requires`, which means they get `visible=True` requirements trait instead of `visible=False`, which has its own downsides.
+The `bad` mode fails. However there is a workaround:
+
+- Set `ENABLE_VISIBILITY_WORKAROUND=True` in `conanfile.py`.
+- This moves the `test_requires` to "normal" `requires`, which means they get `visible=True` requirements trait instead of `visible=False`.
+- But this has its own downsides: now we get the error:
+
+```
+ERROR: tiff_writer/0.1.0: package_info(): The direct dependency 'libxml2' is not used by any '(cpp_info/components).requires'.
+```
+
+So we would have to reference it in our component dependencies, which means it would be linked, which we don't want. It is only used in the unit test.
+
+Another workaround may be to separate out the unit test into a different Conan package, but that is very impractical.
