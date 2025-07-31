@@ -1,0 +1,9 @@
+# ignore top-level dot folders
+/.*/
+
+# ignore build files
+/build_*/
+CMakeUserPresets.json
+
+# mac
+.DS_Store
