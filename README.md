@@ -44,3 +44,5 @@ ERROR: tiff_writer/0.1.0: package_info(): The direct dependency 'libxml2' is not
 So we would have to reference it in our component dependencies, which means it would be linked, which we don't want. It is only used in the unit test.
 
 Another workaround may be to separate out the unit test into a different Conan package, but that is very impractical.
+
+We could also add the unit test as a component in the the package_info(). Then it wouldn't affect the core lib component. But unit tests are usually not designed to be packaged. They are just run as part of the build step.
