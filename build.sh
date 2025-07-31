@@ -25,7 +25,7 @@ conan config home
 conan config install ./conan_config/
 conan profile detect
 
-conan build . \
+conan create . \
     -s build_type=Debug \
     -c tools.cmake.cmake_layout:build_folder="$BUILD_FOLDER" \
     -c tools.cmake.cmake_layout:test_folder="$TEST_FOLDER" \
