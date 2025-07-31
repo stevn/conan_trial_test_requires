@@ -2,7 +2,7 @@ from conan import ConanFile
 from conan.tools.cmake import CMakeToolchain, CMake, cmake_layout, CMakeDeps
 
 # FIXME: How to deal with test_requires properly?
-ENABLE_VISIBILITY_WORKAROUND = True
+ENABLE_VISIBILITY_WORKAROUND = False
 
 class TiffWriterConan(ConanFile):
     name = "tiff_writer"
