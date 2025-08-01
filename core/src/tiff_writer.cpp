@@ -2,7 +2,6 @@
 
 #include <tiffio.h>
 
-#include <stdexcept>
 #include <vector>
 
 namespace tiff_core

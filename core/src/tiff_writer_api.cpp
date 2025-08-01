@@ -2,6 +2,8 @@
 
 #include "tiff_writer.hpp"
 
+#include <stdexcept>
+
 extern "C" char const * tw_version()
 {
     return "tiff_writer 0.1.0";
