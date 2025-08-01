@@ -9,8 +9,8 @@ class TiffWriterConan(ConanFile):
     version = "0.1.0"
 
     settings = "os", "compiler", "build_type", "arch"
-    options = {"shared": [True, False], "fPIC": [True, False]}
-    default_options = {"shared": False, "fPIC": True}
+    options = {"fPIC": [True, False]}
+    default_options = {"fPIC": True}
 
     exports_sources = "CMakeLists.txt", "core/*", "test/*"
 
